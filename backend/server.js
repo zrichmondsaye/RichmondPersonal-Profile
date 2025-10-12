@@ -6,9 +6,7 @@ const cors = require('cors'); // Required to allow requests from your frontend
 
 // Initialize the Express app
 const app = express();
-// NOTE: Render will automatically set the port environment variable, 
-// so we must use process.env.PORT when deploying.
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 // --- CRITICAL PATH CONFIGURATION ---
 // Define the correct absolute path to the frontend folder
@@ -28,23 +26,23 @@ app.use(express.static(frontendPath)); // Serves files like index.html, dashboar
 app.use(express.static(path.join(frontendPath, 'public'))); // Serves files from the /frontend/public folder
 
 
-// --- CRITICAL DEPLOYMENT FIX ---
-// Use the DATABASE_URL environment variable provided by Render.
-// If the variable exists, it uses the secure connection string.
-// Render PostgreSQL requires SSL for connection.
+// Set up the PostgreSQL connection pool.
+// It's highly recommended to use environment variables for sensitive data.
+// Replace the placeholders with your actual database credentials.
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false // Required for connecting to Render's managed Postgres instance
-    }
+    user: 'postgres',
+    host: 'localhost', // e.g., 'localhost' or '127.0.0.1'
+    // The database name has been changed back to the correct name.
+    database: 'contact',
+    password: '00000',
+    port: 5432, // Default PostgreSQL port
 });
-// -------------------------------
 
 // Test the database connection with an async function and try/catch
 async function testDbConnection() {
     try {
         const client = await pool.connect();
-        console.log('Successfully connected to the PostgreSQL database using Render credentials!');
+        console.log('Successfully connected to the PostgreSQL database!');
         client.release(); // Release the client back to the pool
     } catch (err) {
         console.error('Error connecting to the database:', err.stack);
@@ -106,8 +104,7 @@ app.post('/api/contact', async (req, res) => {
     } catch (err) {
         // If an error occurs, log it and send an error response.
         console.error('Error executing query:', err.stack);
-        // Respond with a more generic message for the user
-        res.status(500).json({ error: 'Failed to save message. Please ensure your database table is set up correctly.' });
+        res.status(500).json({ error: 'Failed to save message. Please try again later.' });
     }
 });
 
@@ -148,6 +145,10 @@ app.delete('/api/dashboard/:name', async (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Backend server listening on port ${port}`);
-    console.log(`Access the admin dashboard at ${process.env.PORT ? 'your-render-url' : `http://localhost:${port}/dashboard`}`);
+    console.log(`Backend server listening at http://localhost:${port}`);
+    // UPDATE: Changed the POST endpoint to a more semantically correct path
+    console.log('API endpoint for form submission is: POST http://localhost:3000/api/contact'); 
+    console.log('NEW API endpoint for dashboard data is: GET http://localhost:3000/api/dashboard');
+    console.log('NEW API endpoint for deleting a message is: DELETE http://localhost:3000/api/dashboard/:name');
+    console.log('Access the admin dashboard at http://localhost:3000/dashboard');
 });
