@@ -5,10 +5,12 @@
     "version": "1.0.0",
     "description": "API server for the project.",
     "main": "server.js",
-    "scripts": {
-      "start": "node server.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
+    
+   "scripts": {
+    "start": "node server.js",
+    "build": "babel src -d dist",  
+    "test": "echo \"Error: no test specified\" && exit 1"
+},
     "dependencies": {
       "cors": "^2.8.5",
       "express": "^4.19.2",
