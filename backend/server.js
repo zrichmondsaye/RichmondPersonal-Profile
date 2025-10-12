@@ -134,11 +134,13 @@ app.get('/api/dashboard', async (req, res) => {
 });
 
 // API route to handle message deletion
-app.delete('/api/dashboard/:name', async (req, res) => {
-    const { name } = req.params;
+// FIX: Changed route parameter from :name to :id and updated the query to use the unique ID.
+app.delete('/api/dashboard/:id', async (req, res) => {
+    const { id } = req.params;
     try {
-        const query = 'DELETE FROM test WHERE name = $1;';
-        const result = await pool.query(query, [name]);
+        // IMPORTANT: Deleting by the unique primary key (id)
+        const query = 'DELETE FROM test WHERE id = $1;';
+        const result = await pool.query(query, [id]);
 
         if (result.rowCount > 0) {
             res.status(200).json({ message: 'Message deleted successfully.' });
