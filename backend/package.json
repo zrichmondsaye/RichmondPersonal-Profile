@@ -1,22 +1,22 @@
-
-
-  {
+{
     "name": "your-project-backend",
     "version": "1.0.0",
     "description": "API server for the project.",
     "main": "server.js",
-    
-   "scripts": {
-    "start": "node server.js",
-    "build": "babel src -d dist",  
-    "test": "echo \"Error: no test specified\" && exit 1"
-},
+    "scripts": {
+        "start": "node server.js",
+        "build": "babel . -d dist ",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
     "dependencies": {
-      "cors": "^2.8.5",
-      "express": "^4.19.2",
-      "pg": "^8.16.3"
+        "cors": "^2.8.5",
+        "express": "^4.19.2",
+        "pg": "^8.16.3"
     },
     "devDependencies": {
-      "nodemon": "^3.1.4"
+        "@babel/cli": "^7.28.3",
+        "@babel/core": "^7.28.4",
+        "@babel/preset-env": "^7.28.3",
+        "nodemon": "^3.1.4"
     }
-  }
+}
