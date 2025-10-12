@@ -43,13 +43,36 @@ async function testDbConnection() {
         client.release(); 
     } catch (err) {
         console.error('Error connecting to the database:', err.stack);
-        // NOTE: The application will still start even if the DB connection fails here,
-        // but API calls will obviously fail.
+        // NOTE: The application will still start even if the DB connection fails here.
     }
 }
 
-// Call the test function
+// --- NEW FUNCTION: ENSURE TABLE EXISTS ON STARTUP ---
+async function ensureTableExists() {
+    const createTableQuery = `
+        CREATE TABLE IF NOT EXISTS test (
+            id SERIAL PRIMARY KEY,
+            name VARCHAR(255) NOT NULL,
+            email VARCHAR(255) NOT NULL,
+            subject VARCHAR(255),
+            message TEXT NOT NULL,
+            created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+        );
+    `;
+    try {
+        await pool.query(createTableQuery);
+        console.log('Database table "test" checked/created successfully.');
+    } catch (err) {
+        // This is a critical error since the main API depends on this table
+        console.error('CRITICAL: Failed to create "test" table:', err.stack);
+    }
+}
+// ----------------------------------------------------
+
+
+// Call the test function and then ensure the table exists
 testDbConnection();
+ensureTableExists();
 
 
 // Serve the main HTML file
