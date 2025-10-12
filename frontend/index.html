@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richmond_Personal_Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/index.css">
+   <style>
+    /* This class hides elements by default */
+    .section { display: none; }
+.section.active { display: block; 
+}
+   </style>
+   
+   
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                
+                    <img src="./images/Zrs.png" alt="Logo" class="logo-image">
+                
+                <!-- Mobile menu toggle button -->
+                <button id="menu-toggle" class="md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200">
+                    <div class="menu-toggle-icon"></div>
+                </button>
+            </div>
+            
+            <div id="nav-menu" class="md:flex md:flex-row md:items-center md:space-x-8 md:mt-0 mt-4 hidden">
+                <ul class="nav-links">
+                    <li><a href="#home" class="section-link">Home</a></li>
+                    <li><a href="#about" class="section-link">About</a></li>
+                    <li><a href="#resume" class="section-link">Resume</a></li>
+                    <li><a href="#service" class="section-link">Service</a></li>
+                    <li><a href="#portfolio" class="section-link">Portfolio</a></li>
+                    <li><a href="#contact" class="section-link">Contact</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1CVxtzzCMi/" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwa.me%2F250798264132%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExTWtaNldQWHdiN0pJdGNEeAEelIGIUuJNzNzOeiDHZrePJA2_Kd4j1FJoLWP-4iHtD1hV4QFRjHodyMlsppw_aem_CJrhwG19J-Poi_nliQ884A&h=AT0CDZbBNlg80acAhwvKiMEUYbQ2k0k4sio3G01IQ3EXc9S3s08pispoIpHdic0fJPv5cDTJTnGGp83WrJjcpxbpDY_dKijXj_Wmenm344ihDwfNHE9_DZvhtm6cUCzTDj0m6g" class="social-link whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fsayerichmondz%3Figsh%3DMXN3bXBsdWM1bGdx%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExTWtaNldQWHdiN0pJdGNEeAEeMbRCRWDMLku1cRHjAW3fe-ZoC4FXKMnAkECIv34uXvzR5fdaaaDlaA7AvWc_aem_odlw3Dn77ct6zPJ0Y4lefA&h=AT0CDZbBNlg80acAhwvKiMEUYbQ2k0k4sio3G01IQ3EXc9S3s08pispoIpHdic0fJPv5cDTJTnGGp83WrJjcpxbpDY_dKijXj_Wmenm344ihDwfNHE9_DZvhtm6cUCzTDj0m6g" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fz-richmond-saye-39754a303%3Futm_source%3Dshare%26utm_campaign%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dandroid_app%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExTWtaNldQWHdiN0pJdGNEeAEecJK4nxWyUlim_b5HxEHS-duWugSY2GfQnySLpoEN5Q9NRfAKU1oDKEZQLOI_aem_MmrduzvNYJHzwbDJvuBOSQ&h=AT0CDZbBNlg80acAhwvKiMEUYbQ2k0k4sio3G01IQ3EXc9S3s08pispoIpHdic0fJPv5cDTJTnGGp83WrJjcpxbpDY_dKijXj_Wmenm344ihDwfNHE9_DZvhtm6cUCzTDj0m6g" class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fx.com%2Fsayerichz%3Ft%3DZMa6QHw09guivqa5Ms4fMg%26s%3D09%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExTWtaNldQWHdiN0pJdGNEeAEeDMTeldo3ZNahtmnKzqcUM83NGulb-C65_a3CMQoxmo5UU79WoSHF9AFQMx4_aem_w7y02nTCT5ieVeAvTQBnTQ&h=AT0CDZbBNlg80acAhwvKiMEUYbQ2k0k4sio3G01IQ3EXc9S3s08pispoIpHdic0fJPv5cDTJTnGGp83WrJjcpxbpDY_dKijXj_Wmenm344ihDwfNHE9_DZvhtm6cUCzTDj0m6g" class="social-link x"><i class="fab fa-x"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Hi, I'm <br> <span class="highlight">Richmond Zekar Saye.</span></h1>
+                <p class="hero-subtitle" style="font-weight: bold;">
+                    I'm a <span id="profession-text" class="text-indigo-600 font-bold"></span> 
+                </p> 
+                <p class="hero-description">BSc Candidate - Network Engineering</p>
+                <a href="#about" class="btn btn-primary section-link">About Me</a> <br>
+                <img src="./images/Rich.jpg" class="hero-image" alt="Z. Richmond Saye">
+            </div>
+        </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section hidden">
+        <h2 class="section-heading">About</h2>
+        <p class="section-subheading">Welcome to my profile. I'm excited to share my background and expertise with you.</p>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="images/Rich2.jpg" alt="Richmond Saye">
+            </div>
+            <div class="about-details">
+                <h3>Network Engineer|IT|CyberSecurity & Web Developer.</h3>
+                <p class="bio-text">I am passionate about computer networking, security, and web development.</p>
+                <div class="details-grid">
+                    <div><i class="fas fa-chevron-right" style="color: #05078d;"></i> <strong>Birthday:</strong> <span>8 April 2004</span></div>
+                    <div><i class="fas fa-chevron-right" style="color: #05078d;"></i> <strong>Age:</strong> <span>21</span></div>
+                    <div><i class="fas fa-chevron-right" style="color: #05078d;"></i> <strong>Website:</strong> <span>under construction</span></div>
+                    <div><i class="fas fa-chevron-right" style="color: #05078d;"></i> <strong>Degree:</strong> <span>Candidate of Bsc - Network Engineeing</span></div>
+                    <div><i class="fas fa-chevron-right" style="color: #05078d;"></i> <strong>Phone:</strong> <span>+250 798 264 132</span></div>
+                    <div><i class="fas fa-chevron-right" style="color: #05078d;"></i> <strong>Email:</strong> <span>zrichmondsaye@gmail.com</span></div>
+                    <div><i class="fas fa-chevron-right" style="color: #05078d;"></i> <strong>City:</strong> <span>Ganta City, Liberia</span></div>
+                    <div><i class="fas fa-chevron-right" style="color: #05078d;"></i> <strong>Freelance:</strong> <span>Available</span></div>
+                </div> <br>
+                <p class="bio-text-end">I'm committed to excellence and passionate about my work. I'm eager to collaborate on projects where I can leverage my skills to make a significant impact. Please contact me to discuss potential opportunities.</p>
+            </div>
+        </div>
+
+        <div class="skills-section ">
+            <h2 class="section-heading">Skills</h2>
+            <p class="section-subheading"> I've cultivated a diverse skill set through years of experience, 
+                allowing me to contribute effectively across various projects and tasks. 
+                I'm eager to discuss how my abilities can benefit your team or organization.</p>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>HTML</span>
+                        <span>100%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Routing Protocol</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>CSS</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Data Communication</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>JAVASCRIPT</span>
+                        <span>25%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Network Security</span>
+                        <span>50%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 50%;"></div>
+                    </div>
+                </div>
+    
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Digital Skills</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Network Troubleshooting</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    <div class="facts">
+        <h2 class="section-heading">Facts</h2>
+        <p class="section-subheading">I'd like to share some interesting facts about myself. These details offer a glimpse into my background, experiences, and unique attributes, highlighting what I can bring to the table.</p>
+        <div class="facts-container">
+            <div class="fact-item">
+                <div class="number">0</div>
+                <div class="line"></div>
+                <p class="description">Happy clients who have <br> benefitted from my work</p>
+            </div>
+            <div class="fact-item">
+                <div class="number">3</div>
+                <div class="line"></div>
+                <p class="description"> successfully Class Projects <br> completed and delivered</p>
+            </div>
+            <div class="fact-item">
+                <div class="number">10</div>
+                <div class="line"></div>
+                <p class="description">Hours Of Support <br> provided to my project</p>
+            </div>
+            <div class="fact-item">
+                <div class="number">5</div>
+                <div class="line"></div>
+                <p class="description">Group Members <br> who have contributed to my journey</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonials-section">
+        <h2 class="section-heading">Testimonials</h2>
+        <p class="section-subheading">Discover what clients and collaborators are saying about me. Their expertise, dedication, and passion consistently deliver exceptional results. Read testimonials to discover the impact I have made across various projects and industries.</p>
+        <div class="testimonial-card-container">
+            <div class="testimonial-track">
+                <div class="testimonial-card">
+                    <img src="images/angelo.png" alt="Richmond Saye" class="testimonial-img">
+                    <h3>Angelo N. Sonah</h3>
+                    <p class="designation">CEO - ALPHA TECH</p>
+                    <div class="stars" style="color: #fae106;">
+                        <i class="fas fa-star" ></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="quote">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>
+                            Working with Richmond was effortless. He is not only a skilled web designer and Network Engineer but also a dependable 
+                            professional who consistently communicates effectively and meet deadlines.
+                        </p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <img src="images\Johnson.png" alt="Richmond Saye" class="testimonial-img">
+                    <h3>Johnson M. Nunah</h3>
+                    <p class="designation">Front-End Developer</p>
+                    <div class="stars" style="color: #fae106;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="quote">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>
+                            Working with Richmond on an important Class project was a privilege. 
+                            He is more than just a skilled professional; he truly cares about his team achieving success.
+                        </p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </div>
+                </div>
+    
+                <div class="testimonial-card">
+                    <img src="images/carter.png" alt="Richmond Saye" class="testimonial-img">
+                    <h3>CARTER MENLOR</h3>
+                    <p class="designation">Network Engineer</p>
+                    <div class="stars" style="color: #fae106;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="quote">
+                        <i class="fas fa-quote-left quote-icon"></i> 
+                        <p>
+                            It has been a privilege to collaborate with Richmond in various capacities. His commitment, intelligence, and
+                            brilliance are evident in all his endeavors. He is also consistently educative, making him a valuable asset. 
+                            I have found working with him to be exceptionally helpful, and he possesses the abilities you seek.
+                        </p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </div>
+                </div>
+    
+                <div class="testimonial-card">
+                    <img src="images/bobby.png" alt="Richmond Saye" class="testimonial-img">
+                    <h3>S. Bobby N. Gonday</h3>
+                    <p class="designation">Lawyer</p>
+                    <div class="stars" style="color: #fae106;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="quote">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>
+                            Richmond is highly recommended for his professional, reliable, and exceptionally talented work, 
+                            consistently exceeding expectations with his attention to detail and creativity. For me he's my
+                            preferred choice for future projects.
+                        </p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <img src="images/Wilbert.png" alt="Richmond Saye" class="testimonial-img">
+                    <h3>Wilbert Legacy Gbatu I</h3>
+                    <p class="designation">Network Engineer</p>
+                    <div class="stars" style="color: #fae106;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="quote">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>
+                            Richmond's work is highly recommended due to his professionalism, reliability, and exceptional talent. He consistently 
+                            exceeds expectations with his attention to detail and creativity, making him a preferred choice for future projects.
+                        </p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+ </section>
+
+
+
+    <!-- Placeholder Sections for other pages -->
+   <section id="resume" class="resume-section hidden">
+            <h2 class="section-heading">Resume</h2>
+            <p class="section-subheading" style="font-weight: 20px;">Welcome to my Resume. <br> As a dedicated undergraduate student studying computer Science with option in 
+                Network Engineeing, I am eager to share my journey and experiences with you All.</p>
+        
+            <div class="resume-container">
+                <div class="resume-column">
+                    <h3 class="resume-title">SUMMARY</h3>
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>Z. Richmond Saye</h4>
+                            <p class="resume-description">
+                                I am a Junior Student at the Kigali
+                                Independent University studying Computer
+                                Science with option in Network
+                                Engineering. I am passionate about being a
+                                Cyber Security Expert so I decided to build
+                                my founding in Networking and have a vast
+                                knowledge of Network Security.
+                                I am open to internship/student Job and a lot
+                                opportunities to explore my carrier.
+                            </p>
+                            <ul class="resume-list">
+                                <li>Rwanda, Rubavu District, Gisenyi City</li>
+                                <li>(231) 886-942-664</li>
+                                <li>(250) 798-264-132</li>
+                                <li>zrichmondsaye@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>LANGUAGE</h4>
+                            <h5>ENGLISH</h5>
+                            
+                        </div>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>INTEREST </h4>
+                            <ul>
+                                <li>FOOTBALL</li>
+                                <li>BASKETBALL</li>
+                                <li>READING</li>
+                                <li>MUSIC</li> <br><br>
+                            </ul>
+                        </div>
+                    </div>
+        
+                    <h3 class="resume-title">Education</h3>
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>HIGH SCHOOL DIPLOMA</h4>
+                            <h5>2018 - 2022</h5>
+                            <p><em>GANTA UNITED METHODIST HIGH SCHOOL</em></p>
+                            <p class="resume-description">
+                                My high school experience was a period of significant personal growth, self-discovery, and preparation for the future. Beyond academics, 
+                                I participated in extracurricular activities, which allowed me to develop valuable skills and gain practical experience. 
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>INFORMATION TECHNOLOGY (BSc IT)</h4>
+                            <h5>2022 - 2023</h5>
+                            <p><em>BLUECREST UNIVERSITY, LIBERIA</em></p>
+                            <p class="resume-description">
+                                I studied IT for three semesters (1.5 years) at BlueCrest University in Liberia and then 
+                                I relocate to Rwanda to pursue a degree in Computer Science with a specialization in Network Engineering. 
+                                I found my time at BlueCrest University rewarding, achieving GPAs of 3.89 and 4.00 in the first two semesters. 
+                                I did not complete the third semester due to my relocation to Rwanda mid-semester.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>BSc NETWORK ENGINEERING </h4>
+                            <h5>2023 - Present</h5>
+                            <p><em>KIGALI INDEPENDENT UNIVERSITY, GISENYI BRANCH, Rwanda</em></p>
+                            <p> The BSc Networking program at Kigali Independent University, Gisenyi Branch is developing me as a person in the 
+                                field of Networking. Through their comprehensive curriculum, I have developed skills and gained experience in alot networking
+                                principles: routing and switching, network securities, Network and Data communication, troubleshooting, and 
+                                more. As my senior year continues, I look forward to more......
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>Certificate, CHANGE AGENT PROGRAM</h4>
+                            <h5>2025</h5>
+                            <p><em>MOGI GLOBAL LEADERSHIP SCHOOL </em></p>  
+                        </div>
+                    </div>
+                    
+                </div>
+    
+               
+                <div class="resume-column">
+                    <h3 class="resume-title"></h3>
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>Certificate, Graphic Design  </h4>
+                            <h5>2023</h5>
+                            <p><em>Muyex Academy, Online</em></p>
+                            <ul class="resume-description">
+                                <li><p> Taking the basics at Muyex academy pave my way professiona graphic designing. 
+                                </p></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resume-column">
+                        <h3 class="resume-title"></h3>
+                        <div class="resume-item">
+                            <div class="resume-content">
+                                <h4>Certificate, Leadership Training</h4>
+                                <h5>2025</h5>
+                                <p><em>MOGI GLOBAL LEADERSHIP SCHOOL</em></p>
+                                <ul class="resume-description">
+                                    <li><p> This program propel me and broaden my leadership in Business growth, leadership 
+                                        development and purposeful living towards national significance and Global relivance.
+                                    </p></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    <div class="resume-column">
+                        <h3 class="resume-title">Professional Experience</h3>
+                        <div class="resume-item">
+                            <div class="resume-content">
+                                <h4>Media Committee Chair</h4>
+                                <h5>2025 - Present</h5>
+                                <p><em>Association of Liberians in Gisenyi (ALiG)</em></p>
+                                <ul class="resume-list">
+                                    <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials.</li>
+                                    <li>Delegate tasks to the 3 members of the team and provide guidance on all aspects of task.</li>
+                                </ul>
+                                </div>
+                        </div>
+
+                            
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>PRESIDENT</h4>
+                            <h5>2024- 2025</h5>
+                            <p><em>TECH SPEHRE NETWORK, LIBERIA</em></p>
+                            <ul class="resume-list">
+                                <li>Developed numerous marketing programs (logos, brochures, infographics, presentations, and advertisements).</li>
+                                <li>Managed up to 5 projects or tasks at a given time while under pressure.</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>ASSISTANT MANAGER</h4>
+                            <h5>2023</h5>
+                            <p><em>SUPREME DESIGN CAFE</em></p>
+                        </div>  
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>VOLUNTEER</h4>
+                            <h5>2022</h5>
+                            <p><em>LIBERIA UNITES </em></p>
+                        </div>  
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>VOLUNTEER</h4>
+                            <h5>2022</h5>
+                            <p><em>UNITED NATIONS DEVELOPMENT PROGRAM (UNDP) </em></p>
+                        </div>  
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>FIELD AGENT</h4>
+                            <h5>2022</h5>
+                            <p><em>PARTNER LIBERIA </em></p>
+                        </div>  
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-content">
+                            <h4>SALES-MANAGER</h4>
+                            <h5>2018</h5>
+                            <p><em>Nellie and Andrew (NA) Electronic Business Center </em></p>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- service Section -->
+
+        <section id="service" class="service-section hidden">
+            <h2 class="section-heading">Services</h2>
+            <p class="section-subheading">I offer a range of professional services tailored to meet your needs. 
+                Whether you're an individual or a business, I'm here to help you achieve your goals.</p>
+        
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="icon-box">
+                        <i class="heartbeat"><img src="images/NDP.png" alt=""></i>
+                    </div>
+                    <h4>Network Engineering</h4>
+                    <p>
+                        Designing, implementing, and maintaining secure and efficient network infrastructures for businesses of all sizes.
+                        
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon-box">
+                        <i class="heartbeat"><img src="images/web.png" alt=""></i>
+                    </div>
+                    <h4>Web Development</h4>
+                    <p>
+                        Building responsive, modern, and user-friendly websites from scratch using the latest web technologies.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon-box">
+                        <i class="satellite-dish"><img src="images/NID.png" alt=""></i>
+                    </div>
+                    <h4> UI/UX Design</h4>
+                    <p>
+                        Creating intuitive and engaging user interfaces that provide a seamless and enjoyable user experience.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon-box">
+                        <i class="chalkboard-teacher"><img src="images/gd.png" alt=""></i>
+                    </div>
+                    <h4>Graphic Design</h4>
+                    <p>
+                        I'm dedicated to delivering unique and heart touching designs and achieving your objectives efficiently.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon-box">
+                        <i class="chalkboard-teacher" ><img src="images/web.png" alt=""></i>
+                    </div>
+                    <h4>Digital WOrk</h4>
+                <p>
+                    I am also dedicated and committed to delivering any Digital work. 
+                </p>
+                </div> 
+                
+                <div class="service-card">
+                    <div class="icon-box">
+                        <i class="heartbeat"><img src="images/ns.png" alt=""></i>
+                    </div>
+                    <h4>specialized Services</h4>
+                    <p>
+                        I offer specialized services to meet unique business needs, including Wireless Network Solutions 
+                        and Voice over IP (VoIP) systems for modern communication and mobility. My expertise also covers 
+                        Data Center Operations, network Automation, and strategic Consulting to optimize network
+                        performance, efficiency, and future growth.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+    <!--portfolio section-->
+    <section id="portfolio" class="portfolio-section hidden">
+        <h2 class="section-heading">Portfolio</h2>
+        <p class="section-subheading">A showcase of my recent work, demonstrating my skills in web development, network engineering, and more. </p>
+        
+        <div class="portfolio-filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="app">Graphics Design</button>
+            <button class="filter-btn" data-filter="card">Project</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="Award">Award</button>
+        </div>
+    
+        <div class="portfolio-grid">
+            <div class="portfolio-item app" data-id="1" data-category="app" data-full-image="images/NF.jpeg" data-title="New Fashion Design">
+                <img src="images/NF.jpeg" alt="Graphics">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <h4 style="color: aqua;">New Fashion Design </h4>
+                        <p>This disign is a promotional advertisement for a "New Fashion" shoe, a
+                             Nike Air Jordan 1  offered with a "60% OFF" discount for "SPECIAL CUSTOMERS. </p>
+                        <div class="overlay-icons">
+                            <a href="#" class="portfolio-lightbox-link"><img src="images/plus.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item card" data-id="2" data-category="card" data-full-image="images/ACL.png" data-title="ACLs">
+                <img src="images/ACL.png" alt="Project 1">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <h4 style="color: aqua;">Access Control List</h4>
+                        <p>This configuration demonstrates the use of ACLs for network security and access control, 
+                            restricting access to sensitive resources like the HR Server from the local network.
+                        </p>
+                        <div class="overlay-icons">
+                            <a href="#" class="portfolio-lightbox-link"><img src="images/plus.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item web" data-id="3" data-category="web" data-full-image="images/step_down.jpg" data-title="Step_down">
+                <img src="images/step_down.jpg" alt="Step_Down">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <h4 style="color: aqua;">Step_Down</h4>
+                        <p>This design is a blend of themes related to nature, inner peace, 
+                            and the human connection to the environment, 
+                            achieved through a double exposure photographic effect. </p>
+                        <div class="overlay-icons">
+                            <a href="#" class="portfolio-lightbox-link"><img src="images/plus.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item app" data-id="4" data-category="app" data-full-image="images/FASHIOH.jpg" data-title="Chilly Chie Fashion House">
+                <img src="images/FASHIOH.jpg" alt="Chilly Chie Fashion">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <h4 style="color: aqua;">Chilly Chie Fashion House</h4>
+                        <p>This flyer was design to advertise Chilly Chie Fashion house for the services they run.</p>
+                        <div class="overlay-icons">
+                            <a href="#" class="portfolio-lightbox-link"><img src="images/plus.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item Award" data-id="7" data-category="Award" data-full-image="images/foc.jpg" data-title="face of the cohort">
+                <img src="images/foc.jpg" alt="Face of the Cohort">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <h4 style="color: aqua;">Face of the Cohort</h4>
+                        <p>Because of my presence, many were able to be easily influence to join the next cohort.</p>
+                        <div class="overlay-icons">
+                            <a href="#" class="portfolio-lightbox-link"><img src="images/plus.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+            <div class="portfolio-item card" data-id="5" data-category="card" data-full-image="images/N1.png" data-title="Small/Office Network Configuration">
+                <img src="images/N1.png" alt="Card Project 2">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <h4 style="color: aqua;">Small/Office Network Configuration</h4>
+                        <p>This setup demonstrates a common small office/home office (SOHO) network configuration, 
+                            including both wired and wireless clients, 
+                            a central routing device, and connectivity to an external network. It's intended purpose is to understand
+                            some network protocols.</p>
+                        <div class="overlay-icons">
+                            <a href="#" class="portfolio-lightbox-link"><img src="images/plus.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item Award" data-id="8" data-category="Award" data-full-image="images/BVP.jpg" data-title="Best Video Project">
+                <img src="images/BVP.jpg" alt="Best Video Project">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <h4 style="color: aqua;">Best Video Project</h4>
+                        <p>During the cohort, my video presentation stand out among my fellow pears. Therefore, The award 
+                            was presented to me.
+                        </p>
+                        <div class="overlay-icons">
+                            <a href="#" class="portfolio-lightbox-link"><img src="images/plus.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item Award" data-id="10" data-category="Award" data-full-image="images/MIMH.jpg" data-title="Most Influencial Male Hero">
+                <img src="images/MIMH.jpg" alt="Most Influencial Male Hero">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <h4 style="color: aqua;">Most Influencial Male Hero</h4>
+                        <p>This award was presented to me due to my influence I had during the Cohort.</p>
+                        <div class="overlay-icons">
+                            <a href="#" class="portfolio-lightbox-link"><img src="images/plus.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item Award" data-id="9" data-category="Award" data-full-image="images/BOP.jpg" data-title="Best Book Project">
+                <img src="images/BOP.jpg" alt="Best Book Project">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <h4 style="color: aqua;">Best Book Project</h4>
+                        <p>The best book project was awarded to me.</p>
+                        <div class="overlay-icons">
+                            <a href="#" class="portfolio-lightbox-link"><img src="images/plus.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="portfolio-item web" data-id="6" data-category="web" data-full-image="images/TECH.jpg" data-title="TECH SMART KID">
+                <img src="images/TECH.jpg" alt="TECH SMART KID">
+                <div class="item-overlay">
+                    <div class="overlay-content">
+                        <h4 style="color: aqua;">Tech Smart Kid</h4>
+                        <p>The first brand of Tech Smart Kid before transitioning to Alpha Tech</p>
+                        <div class="overlay-icons">
+                            <a href="#" class="portfolio-lightbox-link"><img src="images/plus.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="portfolio-modal" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <img src="./" alt="Portfolio Image" id="modal-image">
+                <div class="modal-nav">
+                    <button class="prev-button"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-button"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="modal-caption" id="modal-caption"></div>
+            </div>
+        </div>
+    </section>
+
+
+   
+    
+     <!--contact section-->
+     <section id="contact" class="contact-section">
+        <h2 class="section-heading">CONTACT</h2>
+        <p class="section-subheading">I'm available to help with your inquiries and potential collaborations. Please reach out to discuss how I can assist you.</p>
+    
+        <div class="contact-container">
+            <!-- Left Column: Contact Details and Map -->
+            <div class="contact-details-column">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Address</h4>
+                        <p>Rubavu District, Gisenyi, Rwanda</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2h-12a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h7l-1-1v-4l4 4"></path>
+                            <path d="M12 2L2 22"></path>
+                            <path d="M12 2L22 22"></path>
+                            <path d="M12 2v10a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-1"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Call</h4>
+                        <p>+231 886-942-664</p>
+                        <p>+250 798-264-132</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="M22 6L12 13 2 6"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>zrichmondsaye@gmail.com</p>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d63809.03017481334!2d29.214899392148784!3d-1.698961964963566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x19dd050962a31753%3A0xa69ced53ff65c009!2sGisenyi%2C%20Rwanda!3m2!1d-1.6990482!2d29.2560996!5e0!3m2!1sen!2srw!4v1757322649731!5m2!1sen!2srw" width="100%" height="290" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            
+            <div class="contact-form-column">
+                <form id="contactForm" class="contact-form">
+                    <h3 class="text-2xl font-semibold text-gray-800">Leave Your Feedback!</h3>
+                    <div id="statusMessage" class="status-message"></div>
+                    
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" name="subject" id="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="6" required></textarea>
+                    </div>
+                    <div class="form-button-container">
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const professions = ["Emerging IT", "Emerging Network Engineer", "Emerging CyberSecurity Analyst","Web Developer", "UI/UX Designer", "Graphic Designer"];
+  
+      // Make sure this matches your HTML element's id
+      const professionElement = document.getElementById('profession-text');
+      if (!professionElement) {
+        console.error("Element with id 'profession-text' not found.");
+        return;
+      }
+  
+      let professionIndex = 0;
+      let charIndex = 0;
+      let isTyping = true;
+  
+      function typeWriter() {
+        const currentProfession = professions[professionIndex];
+  
+        if (isTyping) {
+          if (charIndex < currentProfession.length) {
+            professionElement.textContent += currentProfession.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeWriter, 100); // Typing speed
+          } else {
+            isTyping = false;
+            setTimeout(typeWriter, 1500); // Pause before deleting
+          }
+        } else {
+          if (charIndex > 0) {
+            professionElement.textContent = currentProfession.substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(typeWriter, 50); // Deleting speed
+          } else {
+            isTyping = true;
+            professionIndex = (professionIndex + 1) % professions.length;
+            setTimeout(typeWriter, 500); // Pause before typing next word
+          }
+        }
+      }
+  
+      // Start the typewriter effect
+      typeWriter();
+    });
+  </script>
+
+
+  <script type="module">
+     document.addEventListener('DOMContentLoaded', () => {
+     const sections = document.querySelectorAll('section');
+     const navLinks = document.querySelectorAll('.section-link');
+     const form = document.getElementById('contactForm');
+     const statusMessageDiv = document.getElementById('statusMessage');
+    
+    function showSection(targetId) {
+    sections.forEach(sec => {
+     if ('#' + sec.id === targetId) {
+     sec.style.display = 'block';
+    } else {
+     sec.style.display = 'none';
+    }
+    });
+     }
+    
+     const storedSection = localStorage.getItem('lastSection');
+    
+     if (storedSection) {
+    showSection(storedSection);
+    } else {
+    showSection('#home');
+     }
+    
+    navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+     e.preventDefault();
+     const targetId = this.getAttribute('href');
+     localStorage.setItem('lastSection', targetId);
+     showSection(targetId);
+     });
+     });
+    
+     form.addEventListener('submit', async (event) => {
+     event.preventDefault();
+    
+     statusMessageDiv.textContent = 'Sending message...';
+    statusMessageDiv.className = 'status-message';
+    
+     const formData = new FormData(form);
+     const data = Object.fromEntries(formData.entries());
+    
+    try {
+     // --- FIX APPLIED HERE: Changed endpoint to /api/contact ---
+     const response = await fetch('http://localhost:3000/api/contact', {
+     method: 'POST',
+     headers: {
+    'Content-Type': 'application/json',
+    },
+     body: JSON.stringify(data),
+      });
+    
+     if (!response.ok) {
+     // Read and log the response body for better debugging
+     const errorBody = await response.json();
+     console.error('API Error Response:', errorBody);
+     throw new Error(`HTTP error! status: ${response.status}. Message: ${errorBody.error || 'No specific error message provided.'}`);
+     }
+    
+     form.reset();
+    statusMessageDiv.textContent = 'Thank you for your feedback, I will get back to you shortly!';
+     statusMessageDiv.className = 'status-message status-success';
+    
+    } catch (error) {
+    console.error('Error submitting form:', error);
+    statusMessageDiv.textContent = 'Failed to send message. Please try again.';
+     statusMessageDiv.className = 'status-message status-error';
+    }
+     });
+    });
+    </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const portfolioGrid = document.querySelector('.portfolio-grid');
+    
+        const modal = document.getElementById('portfolio-modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalCaption = document.getElementById('modal-caption');
+        const closeButton = document.querySelector('.close-button');
+        const prevButton = document.querySelector('.prev-button');
+        const nextButton = document.querySelector('.next-button');
+    
+        let currentImageIndex = 0;
+        let filteredImages = [];
+    
+        // --- Filtering Logic ---
+        function updateFilteredItems() {
+            const activeFilter = document.querySelector('.filter-btn.active');
+            const filterValue = activeFilter ? activeFilter.getAttribute('data-filter') : 'all';
+            
+            portfolioItems.forEach(item => {
+                if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            updateFilteredImages();
+        }
+    
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                updateFilteredItems();
+            });
+        });
+    
+        // --- Lightbox/Modal Logic ---
+    
+        // Function to update the list of currently visible images
+        function updateFilteredImages() {
+            filteredImages = Array.from(portfolioItems).filter(item => item.style.display !== 'none');
+        }
+    
+        // Initial update of filtered images on page load
+        updateFilteredImages();
+    
+        // Open modal when a portfolio item's plus icon is clicked
+        portfolioGrid.addEventListener('click', (e) => {
+            const itemLink = e.target.closest('.portfolio-lightbox-link');
+            if (itemLink) {
+                e.preventDefault();
+                const parentItem = itemLink.closest('.portfolio-item');
+                
+                // Find the index of the clicked item
+                currentImageIndex = filteredImages.findIndex(item => item === parentItem);
+                
+                // Update modal content
+                updateModalContent();
+                
+                // Show the modal
+                modal.classList.add('active');
+            }
+        });
+    
+        // Close modal
+        closeButton.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+    
+        // Close modal if clicking outside the content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    
+        // Navigate to previous image
+        prevButton.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + filteredImages.length) % filteredImages.length;
+            updateModalContent();
+        });
+    
+        // Navigate to next image
+        nextButton.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % filteredImages.length;
+            updateModalContent();
+        });
+    
+        // Function to update modal content based on currentImageIndex
+        function updateModalContent() {
+            if (filteredImages.length > 0) {
+                const newItem = filteredImages[currentImageIndex];
+                const newImageSrc = newItem.getAttribute('data-full-image');
+                const newImageTitle = newItem.getAttribute('data-title');
+    
+                modalImage.src = newImageSrc;
+                modalCaption.textContent = newImageTitle;
+            }
+        }
+    
+        // Keyboard navigation (optional)
+        document.addEventListener('keydown', (e) => {
+            if (modal.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    prevButton.click();
+                } else if (e.key === 'ArrowRight') {
+                    nextButton.click();
+                } else if (e.key === 'Escape') {
+                    closeButton.click();
+                }
+            }
+        });
+    
+    });
+  </script>
+
+ <!-- JavaScript for menu toggle functionality -->
+ <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+            menuToggle.classList.toggle('open');
+        }); 
+    });
+</script>
+
+<script>
+    const track = document.querySelector('.testimonial-track');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    const dots = Array.from(dotsContainer.querySelectorAll('.dot'));
+    const testimonials = Array.from(track.querySelectorAll('.testimonial-card'));
+    const intervalTime = 4000; // 20 seconds
+
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    // Function to update the carousel and dots
+    function updateCarousel() {
+        // Move the track to the current testimonial
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update active dot
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    // Function to move to the next slide automatically
+    function autoPlay() {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        updateCarousel();
+    }
+
+    // Function to start the auto-play timer
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(autoPlay, intervalTime);
+    }
+
+    // Function to stop the auto-play timer
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Event listeners for manual navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            // Stop auto-play and reset timer on manual click
+            stopAutoPlay();
+            currentIndex = index;
+            updateCarousel();
+            startAutoPlay(); // Restart the timer
+        });
+    });
+
+    // Initial setup and start auto-play
+    updateCarousel();
+    startAutoPlay();
+</script>
+
+
+
+    <footer class="ft">
+        <p>&copy; Copyright <b>Richmond</b> All Rights Reserved </p>
+        
+        <a href="https://www.facebook.com/share/1CvYEEYU5p/">Designed by: Z. Richmond Saye</a>
+    </footer>
+
+    
+</body>
+</html>
