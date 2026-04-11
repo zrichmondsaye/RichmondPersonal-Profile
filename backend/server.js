@@ -50,7 +50,7 @@ async function testDbConnection() {
 // --- NEW FUNCTION: ENSURE TABLE EXISTS ON STARTUP ---
 async function ensureTableExists() {
     const createTableQuery = `
-        CREATE TABLE IF NOT EXISTS test (
+        CREATE TABLE IF NOT EXISTS messages (
             id SERIAL PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
             email VARCHAR(255) NOT NULL,
@@ -61,10 +61,10 @@ async function ensureTableExists() {
     `;
     try {
         await pool.query(createTableQuery);
-        console.log('Database table "test" checked/created successfully.');
+        console.log('Database table "messages" checked/created successfully.');
     } catch (err) {
         // This is a critical error since the main API depends on this table
-        console.error('CRITICAL: Failed to create "test" table:', err.stack);
+        console.error('CRITICAL: Failed to create "messages" table:', err.stack);
     }
 }
 // ----------------------------------------------------
@@ -80,8 +80,25 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
+// Basic Authentication Middleware for Dashboard
+const dashboardAuth = (req, res, next) => {
+    const b64auth = (req.headers.authorization || '').split(' ')[1] || '';
+    const [login, password] = Buffer.from(b64auth, 'base64').toString().split(':');
+
+    // Default to admin/admin for development if no env variable is set
+    const adminUser = process.env.ADMIN_USER || 'admin';
+    const adminPass = process.env.ADMIN_PASS || 'admin';
+
+    if (login === adminUser && password === adminPass) {
+        return next();
+    }
+
+    res.set('WWW-Authenticate', 'Basic realm="401"');
+    res.status(401).send('Authentication required.');
+};
+
 // Route to serve the dashboard.html file
-app.get('/dashboard', (req, res) => {
+app.get('/dashboard', dashboardAuth, (req, res) => {
     res.sendFile(path.join(frontendPath, 'dashboard.html'));
 });
 
@@ -95,9 +112,9 @@ app.post('/api/contact', async (req, res) => {
         return res.status(400).json({ error: 'Please provide all required fields.' });
     }
 
-    // SQL query for inserting data into the 'test' table.
+    // SQL query for inserting data into the 'messages' table.
     const insertQuery = `
-        INSERT INTO test (name, email, subject, message)
+        INSERT INTO messages (name, email, subject, message)
         VALUES ($1, $2, $3, $4)
         RETURNING *;
     `;
@@ -114,16 +131,16 @@ app.post('/api/contact', async (req, res) => {
         });
 
     } catch (err) {
-        // This is the error that your form submission is catching (e.g., table 'test' doesn't exist)
+        // This is the error that your form submission is catching (e.g., table 'messages' doesn't exist)
         console.error('Error executing query:', err.stack);
         res.status(500).json({ error: 'Failed to save message. Please try again later.' });
     }
 });
 
 // API route to get all messages for the dashboard
-app.get('/api/dashboard', async (req, res) => {
+app.get('/api/dashboard', dashboardAuth, async (req, res) => {
     try {
-        const query = 'SELECT * FROM test ORDER BY name DESC;';
+        const query = 'SELECT * FROM messages ORDER BY name DESC;';
         const result = await pool.query(query);
 
         res.json(result.rows);
@@ -135,11 +152,11 @@ app.get('/api/dashboard', async (req, res) => {
 
 // API route to handle message deletion
 // FIX: Changed route parameter from :name to :id and updated the query to use the unique ID.
-app.delete('/api/dashboard/:id', async (req, res) => {
+app.delete('/api/dashboard/:id', dashboardAuth, async (req, res) => {
     const { id } = req.params;
     try {
         // IMPORTANT: Deleting by the unique primary key (id)
-        const query = 'DELETE FROM test WHERE id = $1;';
+        const query = 'DELETE FROM messages WHERE id = $1;';
         const result = await pool.query(query, [id]);
 
         if (result.rowCount > 0) {
