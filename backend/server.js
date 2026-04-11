@@ -94,12 +94,13 @@ const dashboardAuth = (req, res, next) => {
         return next();
     }
 
-    res.set('WWW-Authenticate', 'Basic realm="401"');
-    res.status(401).send('Authentication required.');
+    // Remove WWW-Authenticate header to prevent the ugly native browser login popup.
+    // Our custom frontend login form explicitly handles this 401 status.
+    res.status(401).json({ error: 'Authentication required' });
 };
 
-// Route to serve the dashboard.html file
-app.get('/dashboard', dashboardAuth, (req, res) => {
+// Route to serve the dashboard.html file publicly (Authentication is handled by the API calls instead)
+app.get('/dashboard', (req, res) => {
     res.sendFile(path.join(frontendPath, 'dashboard.html'));
 });
 

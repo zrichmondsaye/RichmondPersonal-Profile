@@ -230,8 +230,14 @@
                 setStatusMessage(''); // Clear message on success
             } catch (error) {
                 console.error('Error fetching dashboard data:', error);
-                if (error.message === 'Unauthorized') {
-                    loginError.textContent = 'Invalid username or password.';
+                
+                // If the dashboard is hidden, we must display the error on the login screen
+                if (dashboardContainer.classList.contains('hidden')) {
+                    if (error.message === 'Unauthorized') {
+                        loginError.textContent = 'Invalid username or password.';
+                    } else {
+                        loginError.textContent = 'Database error: Unable to load messages. Please ensure your backend is fully connected.';
+                    }
                     loginError.classList.remove('hidden');
                 } else {
                     setStatusMessage('Failed to load messages. Please check your server connection.', 'error');
