@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
             showSection(targetId);
             
             // Auto close mobile menu if open
-            if (navMenu && !navMenu.classList.contains('hidden')) {
-                navMenu.classList.add('hidden');
+            if (navMenu && !navMenu.classList.contains('translate-x-full')) {
+                navMenu.classList.add('translate-x-full');
                 menuToggle.classList.remove('open');
             }
         });
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('hidden');
+            navMenu.classList.toggle('translate-x-full');
             menuToggle.classList.toggle('open');
         }); 
     }
