@@ -40,14 +40,38 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 font-sans min-h-screen p-4 sm:p-8">
-    <div class="max-w-7xl mx-auto bg-white shadow-2xl rounded-2xl p-6 sm:p-10">
-        <h1 class="text-4xl font-extrabold text-gray-800 text-center mb-8 border-b pb-4">
-            Admin Dashboard
-        </h1>
+<body class="bg-gray-50 font-sans min-h-screen p-4 sm:p-8 flex flex-col justify-center">
+    
+    <!-- Login Screen -->
+    <div id="login-container" class="max-w-md mx-auto w-full bg-white shadow-2xl rounded-2xl p-8 transform transition-all duration-500">
+        <h2 class="text-3xl font-extrabold text-gray-800 text-center mb-6">Admin Login</h2>
+        <div id="loginError" class="hidden bg-red-100 text-red-700 p-3 rounded-xl text-center mb-4 font-medium"></div>
+        <form id="loginForm" class="space-y-6">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                <input type="text" id="username" class="w-full bg-gray-50 text-gray-900 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary border-none" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                <input type="password" id="password" class="w-full bg-gray-50 text-gray-900 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary border-none" required>
+            </div>
+            <button type="submit" class="w-full bg-primary text-white font-bold py-3 rounded-xl shadow-lg hover:bg-blue-600 transition-colors">
+                Access Dashboard
+            </button>
+        </form>
+    </div>
+
+    <!-- Dashboard Container (Hidden by Default) -->
+    <div id="dashboard-container" class="hidden max-w-7xl mx-auto bg-white shadow-2xl rounded-2xl p-6 sm:p-10 w-full mb-auto mt-4">
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-8 border-b pb-4 gap-4">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-800 text-center">
+                Admin Dashboard
+            </h1>
+            <button id="logoutBtn" class="px-5 py-2 bg-gray-100 text-gray-700 font-bold hover:bg-red-50 hover:text-red-500 rounded-lg shadow-sm transition-colors duration-200">Logout</button>
+        </div>
         
         <!-- Status Message Area -->
-        <div id="statusMessage" class="info-message text-center p-3 mb-6 rounded-lg font-medium"></div>
+        <div id="statusMessage" class="info-message text-center p-3 mb-6 rounded-lg font-medium hidden"></div>
 
         <!-- Table Container for Responsive Scroll -->
         <div class="table-container shadow-lg rounded-lg border border-gray-200">
@@ -153,21 +177,65 @@
         }
 
 
+        let authHeader = '';
+
+        const loginForm = document.getElementById('loginForm');
+        const loginContainer = document.getElementById('login-container');
+        const dashboardContainer = document.getElementById('dashboard-container');
+        const loginError = document.getElementById('loginError');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            authHeader = 'Basic ' + btoa(user + ':' + pass);
+            
+            // Authenticate and fetch messages immediately
+            await fetchMessages();
+        });
+
+        logoutBtn.addEventListener('click', () => {
+            authHeader = '';
+            dashboardContainer.classList.add('hidden');
+            loginContainer.classList.remove('hidden');
+            document.getElementById('password').value = '';
+            document.getElementById('username').value = '';
+            tableBody.innerHTML = '';
+        });
+
         // Function to fetch data from the backend
         const fetchMessages = async () => {
             setStatusMessage('Loading messages...', 'info');
-            tableBody.innerHTML = '';
+            
             try {
-                const response = await fetch(`${BASE_URL}/api/dashboard`);
+                const response = await fetch(`${BASE_URL}/api/dashboard`, {
+                    headers: { 'Authorization': authHeader }
+                });
+                
+                if (response.status === 401) {
+                    throw new Error('Unauthorized');
+                }
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
+                
+                // Login successful & data fetched
+                loginError.classList.add('hidden');
+                loginContainer.classList.add('hidden');
+                dashboardContainer.classList.remove('hidden');
+
                 const messages = await response.json();
                 renderMessages(messages);
                 setStatusMessage(''); // Clear message on success
             } catch (error) {
                 console.error('Error fetching dashboard data:', error);
-                setStatusMessage('Failed to load messages. Please check your server connection.', 'error');
+                if (error.message === 'Unauthorized') {
+                    loginError.textContent = 'Invalid username or password.';
+                    loginError.classList.remove('hidden');
+                } else {
+                    setStatusMessage('Failed to load messages. Please check your server connection.', 'error');
+                }
             }
         };
 
@@ -211,7 +279,8 @@
                 try {
                     // Use the message ID in the delete endpoint
                     const response = await fetch(`${BASE_URL}/api/dashboard/${id}`, {
-                        method: 'DELETE'
+                        method: 'DELETE',
+                        headers: { 'Authorization': authHeader }
                     });
                     
                     if (!response.ok) {
@@ -243,8 +312,8 @@
             }
         });
         
-        // Initial data fetch
-        fetchMessages();
+        // Ensure app waits for login before fetching data
+        // fetchMessages(); // Initially disabled; requires authentication first
     </script>
 </body>
 </html>
