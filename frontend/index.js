@@ -93,8 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = Object.fromEntries(formData.entries());
             
             try {
-                // FIXED: Use relative path for seamless local/prod functionality
-                const response = await fetch('/api/contact', {
+                // Point to local development server if on localhost, otherwise point to deployed Render backend
+                const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                const apiUrl = isLocal ? '/api/contact' : 'https://richmondpersonal-profile.onrender.com/api/contact';
+
+                const response = await fetch(apiUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),

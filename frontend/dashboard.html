@@ -75,8 +75,9 @@
     </div>
 
     <script>
-        // NOTE: Uses relative path so it seamlessly works locally and in production
-        const BASE_URL = '';
+        // Determines base URL depending on if running locally or deployed on Netlify
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const BASE_URL = isLocal ? '' : 'https://richmondpersonal-profile.onrender.com';
         
         const tableBody = document.querySelector('#messageTable tbody');
         const refreshBtn = document.getElementById('refreshBtn');
