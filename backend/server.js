@@ -28,11 +28,12 @@ app.use(express.static(path.join(frontendPath, 'public')));
 // The connection pool now reads the DATABASE_URL environment variable 
 // set securely on the Render dashboard. It also enables SSL, which is 
 // required for external cloud connections.
+// Function to dynamically check if the DB is local to handle SSL requirements
+const isLocalDB = !process.env.DATABASE_URL || process.env.DATABASE_URL.includes('localhost') || process.env.DATABASE_URL.includes('127.0.0.1');
+
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false // Required for connecting to Render DB from app
-    }
+    ssl: isLocalDB ? false : { rejectUnauthorized: false }
 });
 
 // Test the database connection with an async function and try/catch
