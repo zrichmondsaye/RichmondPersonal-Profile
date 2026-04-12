@@ -1,4 +1,5 @@
 // Import necessary modules
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const { Pool } = require('pg');
@@ -71,9 +72,14 @@ async function ensureTableExists() {
 // ----------------------------------------------------
 
 
-// Call the test function and then ensure the table exists
-testDbConnection();
-ensureTableExists();
+// Guard clause: Only attempt database operations if DATABASE_URL is configured
+if (process.env.DATABASE_URL) {
+    testDbConnection();
+    ensureTableExists();
+} else {
+    console.warn('\n⚠️  LOCAL UI MODE ACTIVE: No DATABASE_URL found. Running frontend UI only.');
+    console.warn('⚠️  Database queries (contact form, dashboard fetch) will fail until configured linked to Render.\n');
+}
 
 
 // Serve the main HTML file
